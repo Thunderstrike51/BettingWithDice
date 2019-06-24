@@ -105,6 +105,7 @@ namespace BettingWithDice
                     else
                     {
                         Console.WriteLine("ENTER A NUBMER");
+                        Console.WriteLine("");
                         continue;
                     }
                 }
@@ -123,6 +124,7 @@ namespace BettingWithDice
                 answer = Console.ReadLine();
                 if (!answer.ToLower().Equals("5") && !answer.ToLower().Equals("10") && !answer.ToLower().Equals("15") && !answer.ToLower().Equals("20"))
                 {
+                    Console.WriteLine("Enter a valid amount.");
                     continue;
                 }
                 else
@@ -138,7 +140,7 @@ namespace BettingWithDice
                 answer = Console.ReadLine();
                 if (Int64.TryParse(answer, out betAmountPlayer1))
                 {
-                    if (betAmountPlayer1 < 0)
+                    if (betAmountPlayer1 < 0 || betAmountPlayer1 > player1Amount)
                     {
                         Console.WriteLine("Please enter a valid number.");
                         continue;
@@ -160,7 +162,7 @@ namespace BettingWithDice
                 answer = Console.ReadLine();
                 if (Int64.TryParse(answer, out betAmountPlayer2))
                 {
-                    if (betAmountPlayer2 < 0)
+                    if (betAmountPlayer2 < 0 || betAmountPlayer2 > player2Amount)
                     {
                         Console.WriteLine("Please enter a valid number.");
                         continue;
